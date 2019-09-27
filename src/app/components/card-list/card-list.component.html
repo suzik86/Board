@@ -1,2 +1,8 @@
-<p>card-list works!</p>
-<app-card-item></app-card-item>
+<mat-card>
+    {{ statusCard.title }}
+    <app-card-item></app-card-item>
+    <app-card-item></app-card-item>
+    <app-card-item></app-card-item>
+    <button mat-button (click)="onRemove()">Remove</button>
+</mat-card>
+

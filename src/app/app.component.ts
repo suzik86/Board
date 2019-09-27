@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-angular-app';
+  public searchName: string;
+
+  public onSearch(criterion: string) {
+    this.searchName = criterion;
+
+    console.log(this.searchName);
+  };
+
+
 }

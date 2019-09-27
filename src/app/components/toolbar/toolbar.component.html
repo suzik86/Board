@@ -1,1 +1,6 @@
-<p>toolbar works!</p>
+<mat-toolbar>
+    <mat-form-field class="example-full-width">
+        <input [(ngModel)]="searchName" matInput placeholder="Name">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSearch()" >Search</button>
+</mat-toolbar>

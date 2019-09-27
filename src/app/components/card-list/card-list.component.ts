@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import Card from "../../models/Card"
 import CardList from '../../models/CardList';
 
@@ -8,14 +8,15 @@ import CardList from '../../models/CardList';
   styleUrls: ['./card-list.component.css']
 })
 
-export class CardListComponent implements OnInit, CardList {
+export class CardListComponent implements CardList {
   id: number;
   name: string;
   cards: Card[];
 
-  constructor() { }
+  @Input() public statusCard: Card;
+  @Output() public remove = new EventEmitter<Card>();
 
-  ngOnInit() {
+  public onRemove() {
+    this.remove.emit(this.statusCard);
   }
-
 }

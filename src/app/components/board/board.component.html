@@ -1,2 +1,6 @@
-<p>board works!</p>
-<app-card-list></app-card-list>
+<app-card-list
+  *ngFor = "let item of statuses | filter:searchName"
+  [statusCard]="item"
+  (remove)="removeStatus($event)">
+</app-card-list>
+
