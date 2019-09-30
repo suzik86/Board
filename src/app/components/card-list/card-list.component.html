@@ -1,8 +1,10 @@
 <mat-card>
-    {{ statusCard.title }}
-    <app-card-item></app-card-item>
-    <app-card-item></app-card-item>
-    <app-card-item></app-card-item>
-    <button mat-button (click)="onRemove()">Remove</button>
+    {{ items.title }}
+    <app-card-item
+    *ngFor = "let item of items | filter:searchName"
+    [item]="item"
+    (remove)="onRemove($event)"
+    >
+  </app-card-item>
 </mat-card>
 

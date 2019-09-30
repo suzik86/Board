@@ -1,6 +1,8 @@
 <mat-toolbar>
-    <mat-form-field class="example-full-width">
-        <input [(ngModel)]="searchName" matInput placeholder="Name">
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="onSearch()" >Search</button>
+    <form (submit)="onSearch()">
+        <mat-form-field>
+          <input matInput [(ngModel)]="searchName" name="searchName" placeholder="Enter task name" />
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Search</button>
+    </form>
 </mat-toolbar>

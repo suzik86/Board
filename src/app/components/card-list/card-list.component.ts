@@ -13,10 +13,14 @@ export class CardListComponent implements CardList {
   name: string;
   cards: Card[];
 
-  @Input() public statusCard: Card;
-  @Output() public remove = new EventEmitter<Card>();
+  @Input() public items: CardList[];
+  @Input() searchName: string;
+  @Output() public remove = new EventEmitter<any>();
 
-  public onRemove() {
-    this.remove.emit(this.statusCard);
+  public onRemove(item: any) {
+    this.remove.emit({
+      list:this.items,
+      item});
   }
+
 }

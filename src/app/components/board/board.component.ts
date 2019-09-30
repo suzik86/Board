@@ -8,26 +8,48 @@ import { Component, Input } from '@angular/core';
 export class BoardComponent {
   @Input() public searchName: string;
 
-  public statuses = [
+  public items = [
     {
       id:1,
       title: "Backlog",
-      tasks: []
+      tasks: [
+        {
+          taskName: "Task 1"
+        },
+        {
+          taskName: "Task 2"
+        },
+        {
+          taskName: "Task 3"
+        }
+      ]
     },
     {
       id:2,
       title: "In progress",
-      tasks: []
+      tasks: [
+        {
+          taskName: "Task 4"
+        },
+        {
+          taskName: "Task 5"
+        }
+      ]
     },
     {
       id:3,
       title: "Done",
-      tasks: []
+      tasks: [
+        {
+          taskName: "Task 6"
+        }
+      ]
     }
   ];
 
-  public removeStatus(status: any) {
-    const index = this. statuses.findIndex(existingStatus => existingStatus.id === status.id);
-    this.statuses.splice(index, 1);
+  public removeCard({list, item}) {
+    const index = list.findIndex(existingCard => existingCard.taskName === item.taskName);
+    list.splice(index, 1);
   }
+
 }

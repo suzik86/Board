@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import Card from '../../models/Card';
 import User from '../../models/User';
 
@@ -7,16 +7,18 @@ import User from '../../models/User';
   templateUrl: './card-item.component.html',
   styleUrls: ['./card-item.component.css']
 })
-export class CardItemComponent implements OnInit, Card {
+export class CardItemComponent implements Card {
   id: number;
   name: string;
   description: string;
   dueDate?: Date | string;
   assignee?: User;
 
-  constructor() { }
+  @Input() item: Card;
+  @Input() isDone: boolean;
+  @Output() remove = new EventEmitter<Card>();
 
-  ngOnInit() {
+  public onRemove() {
+    this.remove.emit(this.item)
   }
-
 }

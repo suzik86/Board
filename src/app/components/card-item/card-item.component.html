@@ -1,1 +1,4 @@
-<mat-card>Simple card</mat-card>
+<mat-card>
+  {{ item.taskName }}
+  <button mat-button (click)="onRemove()">Remove</button>
+</mat-card>
