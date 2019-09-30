@@ -14,13 +14,34 @@ export class BoardComponent {
       title: "Backlog",
       tasks: [
         {
-          taskName: "Task 1"
+          name: "Task 1",
+          isDone: false,
+          description: "Add project structure",
+          dueDate: "October 17, 2019",
+          assignee: {
+            firstName: "Ivan",
+            lastName: "Petrov"
+          }
         },
         {
-          taskName: "Task 2"
+          name: "Task 2",
+          isDone: false,
+          description: "Get API key",
+          dueDate: "October 07, 2019",
+          assignee: {
+            firstName: "Kate",
+            lastName: "Petrova"
+          }
         },
         {
-          taskName: "Task 3"
+          name: "Task 3",
+          isDone: false,
+          description: "Implement swipe for horizontal list",
+          dueDate: "October 03, 2019",
+          assignee: {
+            firstName: "Inna",
+            lastName: "Vetrov"
+          }
         }
       ]
     },
@@ -29,10 +50,24 @@ export class BoardComponent {
       title: "In progress",
       tasks: [
         {
-          taskName: "Task 4"
+          name: "Task 4",
+          isDone: false,
+          description: "Add the additional navigation buttons",
+          dueDate: "October 05, 2019",
+          assignee: {
+            firstName: "Nina",
+            lastName: "Ivanova"
+          }
         },
         {
-          taskName: "Task 5"
+          name: "Task 5",
+          isDone: false,
+          description: "Add the tooltip with page number",
+          dueDate: "October 10, 2019",
+          assignee: {
+            firstName: "Ira",
+            lastName: "Sidorova"
+          }
         }
       ]
     },
@@ -41,14 +76,41 @@ export class BoardComponent {
       title: "Done",
       tasks: [
         {
-          taskName: "Task 6"
+          name: "Task 6",
+          isDone: true,
+          description: "Create search box",
+          dueDate: "October 08, 2019",
+          assignee: {
+            firstName: "Ivan",
+            lastName: "Petrov"
+          }
+        },
+        {
+          name: "Task 7",
+          isDone: true,
+          description: "Add support at least one mobile browser",
+          dueDate: "October 02, 2019",
+          assignee: {
+            firstName: "Ivan",
+            lastName: "Petrov"
+          }
+        },
+        {
+          name: "Task 8",
+          isDone: true,
+          description: "Your complete app should be uploaded to github pages ",
+          dueDate: "October 11, 2019",
+          assignee: {
+            firstName: "Ivan",
+            lastName: "Petrov"
+          }
         }
       ]
     }
   ];
 
   public removeCard({list, item}) {
-    const index = list.findIndex(existingCard => existingCard.taskName === item.taskName);
+    const index = list.findIndex(existingCard => existingCard.name === item.name);
     list.splice(index, 1);
   }
 

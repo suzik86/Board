@@ -12,8 +12,10 @@ export class CardListComponent implements CardList {
   id: number;
   name: string;
   cards: Card[];
+  isDoneSection: boolean
 
   @Input() public items: CardList[];
+  @Input() title: string;
   @Input() searchName: string;
   @Output() public remove = new EventEmitter<any>();
 

@@ -15,6 +15,8 @@ import { CardListComponent } from './components/card-list/card-list.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterPipe } from './pipes/filter.pipe';
+import { DaysLeftPipe } from './pipes/days-left.pipe';
+import { DaysLeftDirective } from './directives/days-left.directive';
 
 
 
@@ -28,6 +30,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     CardListComponent,
     CardItemComponent,
     FilterPipe,
+    DaysLeftPipe,
+    DaysLeftDirective,
   ],
   imports: [
     BrowserModule,

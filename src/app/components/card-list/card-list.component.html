@@ -1,10 +1,11 @@
 <mat-card>
-    {{ items.title }}
+    <h3>{{ title }}</h3>
     <app-card-item
     *ngFor = "let item of items | filter:searchName"
     [item]="item"
     (remove)="onRemove($event)"
     >
   </app-card-item>
+  <button mat-raised-button color="primary">+ Create card</button>
 </mat-card>
 

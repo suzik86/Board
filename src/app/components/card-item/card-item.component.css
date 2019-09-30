@@ -1,0 +1,10 @@
+mat-card {
+  background-color: lightgray;
+  color: #000;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.isDone {
+  text-decoration-line: line-through;
+}
