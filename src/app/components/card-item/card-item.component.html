@@ -1,9 +1,12 @@
-<mat-card>
+<mat-card (click)="changeDisplay()" appDaysLeft
+  [dueDate]="item.dueDate"
+  [isDone]="item.isDone">
   <h4 [ngClass]="{'isDone': item.isDone}">{{ item.name }}</h4>
-  <p>{{ item.description }}</p>
-  <p>{{ item.dueDate | date:"MM/dd/yy" }}</p>
-  <p>{{ item.dueDate | daysLeft }}</p>
-  <p>{{ item.assignee.firstName }} {{ item.assignee.lastName }}</p>
-  <button mat-stroked-button color="primary" (click)="onRemove()">Remove</button>
-  <button mat-stroked-button color="primary">Edit</button>
+  <ng-container *ngIf="expanded">
+      <p>{{ item.description }}</p>
+      <p>{{ item.dueDate | date:"MM/dd/yy" }}</p>
+      <p>{{ item.assignee.firstName }} {{ item.assignee.lastName }}</p>
+      <button mat-stroked-button color="primary" (click)="onRemove()">Remove</button>
+      <button mat-stroked-button color="primary">Edit</button>
+  </ng-container>
 </mat-card>
