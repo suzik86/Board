@@ -13,12 +13,12 @@ export class DaysLeftDirective implements OnInit {
   ngOnInit() {
     const dueDate = new Date(this.dueDate);
     const nowDate = new Date();
-    const seconds = 24*60*60*1000;
+    const millisecondsInDay = 24*60*60*1000;
 
     if(!this.isDone){
-      if((dueDate.getTime() - nowDate.getTime())/seconds < 3) {
+      if((dueDate.getTime() - nowDate.getTime())/millisecondsInDay < 3) {
         this.renderer2.setStyle(this.elementRef.nativeElement, 'background-color', "red")
-      } else if((dueDate.getTime() - nowDate.getTime())/seconds < 7) {
+      } else if((dueDate.getTime() - nowDate.getTime())/millisecondsInDay < 7) {
         this.renderer2.setStyle(this.elementRef.nativeElement, 'background-color', "yellow")
       }
     }
